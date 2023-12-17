@@ -12,7 +12,6 @@ void	ft_putstr(char *str)
 	}
 }
 
-
 /*
 #include <stdio.h>
 

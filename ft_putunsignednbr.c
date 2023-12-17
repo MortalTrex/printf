@@ -11,9 +11,11 @@ void	ft_putunsignednbr(unsigned int nb)
 	write (1, &res, 1);
 }
 
+/*
 int	main()
 {
 	unsigned int nb = 214748344333;
 	ft_putunsignednbr(nb);
 	write (1, "\n", 1);
 }
+*/

@@ -22,35 +22,12 @@ void	ft_putptr(void *ptr)
 	ft_putstr(str);
 }
 
+/*
 int main() 
 {
   int nombre = 42;
 
   ft_putptr((void *)&nombre);
 	printf("\nla vraie fonction :%p", &nombre);
-}
-
-/*
-void	ft_putptr(void * ptr)
-{
-	unsigned char	str;
-	int	i;
-
-	str = (unsigned char *)ptr;
-	i = 0;
-	while (str[i])
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
-	return ;
-}
-
-int main()
-{
-	int nb = 10;
-	int *ptr = &nb;
-	
-	ft_putptr(ptr);
 }
 */

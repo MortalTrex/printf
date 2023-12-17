@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 void	ft_putstr(char *str);
-void	ft_printf(char *str, int res);
+int		ft_printf(const char *str, ...);
 void	ft_putnbr(int nb);
 void	ft_putunsignednbr(unsigned int nb);
-
+void	ft_putchar(int c);

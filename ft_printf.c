@@ -2,26 +2,23 @@
 
 int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	va_start(args, str);
-	int	i;
+	va_list	args;
+	int		i;
 
+	va_start(args, str);
 	i = 0;
-	while (args )
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
 			if (str[i + 1] == 'c')
-				ft_putchar(va_args, ) //putchar
+				ft_putchar(va_arg(args, int));
 			if (str[i + 1] == 's')
-				return (0);	//putstr 
+				return (0); //putstr 
 			if (str[i + 1] == 'p')
 				return (0); //putptr
-			if (str[i + 1] == 'd')
+			if (str[i + 1] == 'd' || str[i + 1] == 'i')
 				return (0); //putnbr
-			if (str[i + 1] == 'i')
-				return (0); //putnbr ?
 			if (str[i + 1] == 'u')
 				return (0); //putunsignednbr
 			if (str[i + 1] == 'x')
@@ -29,8 +26,11 @@ int	ft_printf(const char *str, ...)
 			if (str[i + 1] == 'X')
 				return (0);
 			if (str[i + 1] == '%')
-				return (0);
-		}	
+				write(1, "%", 1);
+			i++;
+		}
+		else if (str[i] != '%')
+			write(1, &str[i], 1);
 		i++;
 	}
 	va_end (args);
@@ -39,7 +39,7 @@ int	ft_printf(const char *str, ...)
 
 int main ()
 {
-  char *res = "Salut";
-	int nb = 3;
-	ft_printf("%d", nb);
+  //const char str = "Salut";
+	//int nb = 3;
+	ft_printf("Saluuuuut c'est : %c%c\n", 'z', 'e');
 }
