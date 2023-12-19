@@ -1,11 +1,12 @@
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
-	char					str[sizeof(void *) * 2 + 3];// +3 pour "0x" et '\0'
+	char			str[sizeof(void *) * 2 + 3];// +3 pour "0x" et '\0'
 	unsigned long	adresse;
-	int						i;
+	int				i;
 	const char		*hex;
+	int				tmp;
 
 	str[0] = '0';
 	str[1] = 'x';
@@ -19,7 +20,8 @@ void	ft_putptr(void *ptr)
 		i--;
 	}
 	str[sizeof(void *) * 2 + 2] = '\0'; // Terminer la chaîne
-	ft_putstr(str);
+	tmp = ft_putstr(str);
+	return (tmp);
 }
 
 /*

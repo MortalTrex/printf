@@ -1,15 +1,19 @@
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		write (1, &str[i], 1);
 		i++;
 	}
+	return (i);
+}
+int	ft_putstr(char *str)
+{
+	return (write (1, str, ft_strlen(str)));
 }
 
 /*

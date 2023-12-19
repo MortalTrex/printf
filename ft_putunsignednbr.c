@@ -1,6 +1,6 @@
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putunsignednbr(unsigned int nb)
+int	ft_putunsignednbr(unsigned int nb)
 {
 	char	res;
 

@@ -1,11 +1,14 @@
-NAME = printf.a
+NAME = libftprintf.a
 
-HEADER = printf.h
+HEADER = ft_printf.h
 
 SRCS = ft_printf.c		\
 	ft_putnbr.c		\
 	ft_putstr.c		\
-
+	ft_puthexnbr.c		\
+	ft_putchar.c		\
+	ft_putptr.c			\
+	ft_putunsignednbr.c		\
 
 CC=clang
 
