@@ -2,26 +2,31 @@
 
 int	ft_putptr(void *ptr)
 {
-	char			str[sizeof(void *) * 2 + 3];// +3 pour "0x" et '\0'
+	char			str[sizeof(void *) * 2 + 3];
 	unsigned long	adresse;
 	int				i;
 	const char		*hex;
-	int				tmp;
-
-	str[0] = '0';
-	str[1] = 'x';
+	int				count;
+	
+	count += write(1, "0x", 2);;
 	i = sizeof(void *) * 2 - 1;
 	hex = "0123456789abcdef";
 	adresse = (unsigned long)ptr;
+	if (adresse == 0)
+	{
+		count += ft_putstr("(nil)");
+		return (5);
+	}
 	while (i >= 0)
 	{
-		str[i + 2] = hex[adresse & 0xF]; // Masquer les 4 bits les plus faibles
-		adresse >>= 4; // Décalage pour récupérer les 4 bits suivants
+		str[i + 2] = hex[adresse & 0xF];
+		adresse >>= 4;
 		i--;
 	}
-	str[sizeof(void *) * 2 + 2] = '\0'; // Terminer la chaîne
-	tmp = ft_putstr(str);
-	return (tmp);
+	str[sizeof(void *) * 2 + 2] = '\0';
+	count += write(1, str, sizeof(void *) * 2);
+	//count = ft_putstr(str);
+	return (count);
 }
 
 int main()

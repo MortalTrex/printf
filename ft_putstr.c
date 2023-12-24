@@ -6,23 +6,21 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i])
-	{
 		i++;
-	}
 	return (i);
 }
 int	ft_putstr(char *str)
 {
+	if (!str)
+		return (ft_putstr("(null)"));
 	return (write (1, str, ft_strlen(str)));
 }
 
 /*
-#include <stdio.h>
-
 int main()
 {
-	char string[5] = "testt";
-	printf("%d", ft_putstr(string));
+	printf("%d", ft_putstr(NULL));
+	printf("\n%s", "");
 }
 */
 

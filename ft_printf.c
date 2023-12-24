@@ -24,11 +24,14 @@ int	ft_printf(const char *str, ...)
 			if (str[i + 1] == 'u')
 				wrote += ft_putunsignednbr(va_arg(args, unsigned int), 1);
 			if (str[i + 1] == 'x')
-				wrote += ft_puthexnbr(va_arg(args, int), 0, 1);
+				wrote += ft_puthexnbr(va_arg(args, unsigned int), 0, 1);
 			if (str[i + 1] == 'X')
-				wrote += ft_puthexnbr(va_arg(args, int), 1, 1);
+				wrote += ft_puthexnbr(va_arg(args, unsigned int), 1, 1);
 			if (str[i + 1] == '%')
+			{
 				write(1, "%", 1);
+				wrote++;
+			}
 			i++;
 		}
 		else if (str[i] != '%')
