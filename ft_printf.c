@@ -20,13 +20,13 @@ int	ft_printf(const char *str, ...)
 			if (str[i + 1] == 'p')
 				wrote += ft_putptr(va_arg(args, char *));
 			if (str[i + 1] == 'd' || str[i + 1] == 'i')
-				wrote += ft_putnbr(va_arg(args, int));
+				wrote += ft_putnbr(va_arg(args, int), 1);
 			if (str[i + 1] == 'u')
-				wrote += ft_putunsignednbr(va_arg(args, unsigned int));
+				wrote += ft_putunsignednbr(va_arg(args, unsigned int), 1);
 			if (str[i + 1] == 'x')
-				wrote += ft_puthexnbr(va_arg(args, int), 0);
+				wrote += ft_puthexnbr(va_arg(args, int), 0, 1);
 			if (str[i + 1] == 'X')
-				wrote += ft_puthexnbr(va_arg(args, int), 1);
+				wrote += ft_puthexnbr(va_arg(args, int), 1, 1);
 			if (str[i + 1] == '%')
 				write(1, "%", 1);
 			i++;

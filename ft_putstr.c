@@ -22,6 +22,7 @@ int	ft_putstr(char *str)
 int main()
 {
 	char string[5] = "testt";
-	ft_putstr(string);
+	printf("%d", ft_putstr(string));
 }
 */
+

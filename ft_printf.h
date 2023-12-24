@@ -10,7 +10,7 @@
 int	    ft_putptr(void *ptr);
 int	    ft_putstr(char *str);
 int		ft_printf(const char *str, ...);
-int	    ft_putnbr(int nb);
-int	    ft_putunsignednbr(unsigned int nb);
+int	    ft_putnbr(int nb, int count);
+int	    ft_putunsignednbr(unsigned int nb, int count);
 int	    ft_putchar(int c);
-int     ft_puthexnbr(int nb, int minmaj);
+int     ft_puthexnbr(int nb, int minmaj, int count);

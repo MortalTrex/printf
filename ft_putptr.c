@@ -24,12 +24,10 @@ int	ft_putptr(void *ptr)
 	return (tmp);
 }
 
-/*
-int main() 
+int main()
 {
-  int nombre = 42;
+	int nombre = 42;
 
-  ft_putptr((void *)&nombre);
+	printf("%d", ft_putptr((void *)&nombre));
 	printf("\nla vraie fonction :%p", &nombre);
 }
-*/
