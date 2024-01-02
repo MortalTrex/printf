@@ -1,5 +1,6 @@
 #include "ft_printf.h"
 
+/*
 int	ft_putptr(void *ptr)
 {
 	char			str[sizeof(void *) * 2 + 3];
@@ -26,13 +27,34 @@ int	ft_putptr(void *ptr)
 	str[sizeof(void *) * 2 + 2] = '\0';
 	count += write(1, str, sizeof(void *) * 2);
 	//count = ft_putstr(str);
-	return (count);
+	returnf(count);
+}
+*/
+
+int	ft_putptr(void *ptr)
+{
+	unsigned long adresse;
+	int	count;
+
+	count = 0;
+	adresse = (unsigned long)ptr;
+	if (adresse == 0)
+	{
+		ft_putstr("(nil)");
+		return (5);
+	}
+	count += ft_putstr("0x1");
+	count += ft_puthexnbr(adresse, 0, 0);
+	return (count + 1);
 }
 
+/*
 int main()
 {
-	int nombre = 42;
+	int nombre = 1;
 
 	printf("%d", ft_putptr((void *)&nombre));
 	printf("\nla vraie fonction :%p", &nombre);
+	printf("%d", printf("\n%p", &nombre));
 }
+*/
