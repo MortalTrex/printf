@@ -37,24 +37,21 @@ int	ft_putptr(void *ptr)
 	int	count;
 
 	count = 0;
-	adresse = (unsigned long)ptr;
-	if (adresse == 0)
+	//adresse = (unsigned long)ptr;
+	if (ptr == 0)
 	{
 		ft_putstr("(nil)");
 		return (5);
 	}
-	count += ft_putstr("0x1");
-	count += ft_puthexnbr(adresse, 0, 0);
+	count += ft_putstr("0x");
+	count += ft_puthexnbr(&ptr, 0, 0);
 	return (count + 1);
 }
 
-/*
 int main()
 {
-	int nombre = 1;
+	unsigned long nombre = 1;
 
-	printf("%d", ft_putptr((void *)&nombre));
-	printf("\nla vraie fonction :%p", &nombre);
-	printf("%d", printf("\n%p", &nombre));
+	ft_putptr(&nombre);
+	printf("\n%p", &nombre);
 }
-*/

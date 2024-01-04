@@ -18,7 +18,7 @@ int	ft_printf(const char *str, ...)
 			if (str[i + 1] == 's')
 				wrote += ft_putstr(va_arg(args, char *)); 
 			if (str[i + 1] == 'p')
-				wrote += ft_putptr(va_arg(args, void *));
+				wrote += ft_putptr(va_arg(args, unsigned long *));
 			if (str[i + 1] == 'd' || str[i + 1] == 'i')
 				return 0;//wrote += ft_putnbr(va_arg(args, int), 1);
 			if (str[i + 1] == 'u')
@@ -45,7 +45,6 @@ int	ft_printf(const char *str, ...)
 	return (wrote);
 }
 
-/*
 int main ()
 {
   //const char str = "Salut";
@@ -53,4 +52,3 @@ int main ()
 	printf("%d\n", ft_printf("%p\n", &nb));
 	printf("%d", printf("%p\n", &nb));
 }
-*/
